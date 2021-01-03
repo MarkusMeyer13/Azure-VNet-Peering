@@ -16,25 +16,25 @@ sudo apt-get install jq
 
 ### 2.1 deploy-functions.sh
 
-Specify values values for:
-*app_cloud*
-*app_on_premise*
+Specify values values for:  
+*app_cloud*  
+*app_on_premise*  
 
 ### 2.2 deploy-vms.sh
 
 Set *username* and *password*.
 
-Specify values for Vnets:
-*vnet_cloud_name*
-*vnet_cloud_subnet_name*
-*vnet_on_premise_name*
-*vnet_on_premise_subnet_name*
+Specify values for Vnets:  
+*vnet_cloud_name*  
+*vnet_cloud_subnet_name*  
+*vnet_on_premise_name*  
+*vnet_on_premise_subnet_name*  
 
 ### 2.3 deploy.sh
 
-Specify values values for:
-*resource_group*
-*location*
+Specify values values for:  
+*resource_group*  
+*location*  
 
 ## 3 Deployment
 
