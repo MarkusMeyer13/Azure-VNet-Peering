@@ -1,5 +1,7 @@
 # VNET Peering
 
+Please find more information here on [Dev.To](https://dev.to/markusmeyer13/azure-vnet-peering-29mm)
+
 ## 1 Prerequisites
 
 ### 1.1 WSL 2 Ubuntu
