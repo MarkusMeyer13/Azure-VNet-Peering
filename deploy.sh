@@ -1,5 +1,5 @@
 #!/bin/bash
-resource_group="eval.peering.mm1"
+resource_group="eval.peering"
 location="westeurope"
 
 function createAzureResources {
