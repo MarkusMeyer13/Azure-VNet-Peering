@@ -24,3 +24,14 @@ createAzureResources
 
 sh ./deploy-functions.sh $resource_group
 sh ./deploy-vms.sh $resource_group
+
+apim_name=$(az apim list --resource-group $resource_group --query "[].name" --output tsv)
+apim_name=$(echo "$apim_name" | tr -d '\r')
+echo "apim_name:" $apim_name
+
+echo
+echo "Connect to VMs and execute:"
+echo
+
+echo "curl https://$apim_name.azure-api.net/evaluation/onpremise"
+echo "curl https://$apim_name.azure-api.net/evaluation/cloud"

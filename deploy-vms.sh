@@ -1,6 +1,6 @@
 #!/bin/bash
 resource_group=$1
-password="secretToChange"
+password="secret1To2Change"
 username="azureuser"
 
 echo $resource_group
@@ -19,7 +19,7 @@ echo "apim_name:" $apim_name
 
 echo
 echo "Configure CloudInit >> /etc/hosts"
-file=cloud-init.yml
+file="cloud-init.yml"
 cat cloud-init.txt > $file
 echo "  - echo $apim_private_ip $apim_name.azure-api.net >> /etc/hosts" >> $file
 echo "  - echo $apim_private_ip $apim_name.portal.azure-api.net >> /etc/hosts" >> $file
@@ -32,8 +32,8 @@ cat $file
 
 
 echo
-echo "\e[32mCreate Linux Vms"
-echo "\e[0m"
+echo "$(tput setaf 2)Create Linux Vms $(tput setaf 7)"
+echo
 
 vnet_cloud_name="vnet-cloud"
 vnet_cloud_subnet_name="snet-vnet-cloud-backends"
