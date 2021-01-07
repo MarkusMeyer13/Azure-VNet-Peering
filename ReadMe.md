@@ -40,6 +40,11 @@ Specify values values for:
 
 ## 3 Deployment
 
+Deploy Azure resources, Function Apps and VMs:
+
 ```bash
 bash deploy.sh
 ```
+Deploy only Azure resources:
+
+[![Deploy To Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMarkusMeyer13%2FAzure-VNet-Peering%2Fmaster%2Fazuredeploy.json)  [![Visualize](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/visualizebutton.svg?sanitize=true)](http://armviz.io/#/?load=https%3A%2F%2raw.githubusercontent.com%2FMarkusMeyer13%2FAzure-VNet-Peering%2Fmaster%2Fazuredeploy.json)
