@@ -11,7 +11,7 @@ function createAzureResources {
         echo "Group does not exists"
     else
         echo "Group exists and will be deleted first"
-        az group delete --name $resource_group --yes
+        # az group delete --name $resource_group --yes
     fi
     
     az group create --name $resource_group --location $location

@@ -7,11 +7,15 @@ apim_name=$(az apim list --resource-group $resource_group --query "[].name" --ou
 apim_name=$(echo "$apim_name" | tr -d '\r')
 echo "apim_name:" $apim_name
 
-echo 
-app_on_premise="func-on-premise"
-echo "\e[32mDeploy App $app_on_premise"
 
-echo "\e[0mCreate local.settings.json"
+
+app_on_premise=$(az functionapp list --resource-group $resource_group --query "[?contains(name, 'func-on-premise')].name" --output tsv)
+app_on_premise=$(echo "$app_on_premise" | tr -d '\r')
+
+echo 
+echo "Deploy App $app_on_premise"
+
+echo "Create local.settings.json"
 setting_function_onpremise="{ \"IsEncrypted\": false, \"Values\": { \"cloudAPIMUrl\": \"https://$apim_name.azure-api.net/private/evaluation/cloud\" }, \"ConnectionStrings\": {} }"
 jq -n "$setting_function_onpremise" > ./Functions/PeeringFunctionOnPremise/local.settings.json
 cat ./Functions/PeeringFunctionOnPremise/local.settings.json
@@ -29,11 +33,13 @@ cd ..
 pwd
 
 
-echo 
-app_cloud="func-cloud"
-echo "\e[32mDeploy App $app_cloud"
+app_cloud=$(az functionapp list --resource-group $resource_group --query "[?contains(name, 'func-cloud')].name" --output tsv)
+app_cloud=$(echo "$app_cloud" | tr -d '\r')
 
-echo "\e[0mCreate local.settings.json"
+echo 
+echo "Deploy App $app_cloud"
+
+echo "Create local.settings.json"
 setting_function_cloud="{ \"IsEncrypted\": false, \"Values\": { \"onPremiseAPIMUrl\": \"https://$apim_name.azure-api.net/private/evaluation/onpremise\" }, \"ConnectionStrings\": {} }"
 jq -n "$setting_function_cloud" > ./Functions/PeeringFunctionCloud/local.settings.json
 cat ./Functions/PeeringFunctionCloud/local.settings.json

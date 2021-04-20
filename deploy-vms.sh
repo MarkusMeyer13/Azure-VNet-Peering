@@ -1,6 +1,6 @@
 #!/bin/bash
 resource_group=$1
-password="secretToChange"
+password="!pw123456pw!"
 username="azureuser"
 
 echo $resource_group
@@ -32,8 +32,8 @@ cat $file
 
 
 echo
-echo "\e[32mCreate Linux Vms"
-echo "\e[0m"
+echo "Create Linux Vms"
+echo 
 
 vnet_cloud_name="vnet-cloud"
 vnet_cloud_subnet_name="snet-vnet-cloud-backends"
